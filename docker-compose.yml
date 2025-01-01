@@ -1,0 +1,11 @@
+version: '3.8'
+    services:
+      app:
+        build: .
+        ports:
+          - "3452:3452"
+        environment:
+          - NODE_ENV=production
+          - STRIPE_API_KEY=your_stripe_api_key
+          - OPENROUTER_API_KEY=your_openrouter_api_key
+        restart: unless-stopped
